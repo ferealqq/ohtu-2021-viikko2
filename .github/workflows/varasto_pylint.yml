@@ -17,6 +17,9 @@ jobs:
       - name: Install dependencies
         working-directory: ./varasto
         run: poetry install
+      - name: Run ls
+        working-directory: ./varasto
+        run: ls
       - name: Run lint
         working-directory: ./varasto
         run: poetry run pylint src
