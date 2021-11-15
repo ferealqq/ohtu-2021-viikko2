@@ -1,0 +1,26 @@
+name: Pylint
+
+on: 
+  push: 
+    paths: 
+      - 'varasto'
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Change in to correct directory
+        run: cd varasto/
+      - name: Install Poetry
+        run: pip install poetry
+      - name: Install dependencies
+        run: poetry install
+      - name: Run lint
+        run: poetry run pylint src
