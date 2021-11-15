@@ -1,10 +1,6 @@
 name: Pylint
 
-on: 
-  push: 
-    paths: 
-      - 'varasto'
-
+on: [push]
 
 jobs:
   build:
